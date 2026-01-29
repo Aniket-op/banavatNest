@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Quote, CircleDot, UserCircle2 } from 'lucide-react';
 
@@ -111,32 +110,34 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-zinc-50 dark:bg-zinc-900/50 rounded-[4rem] p-12 border border-zinc-100 dark:border-zinc-800 relative text-left transition-colors">
+            {/* Dr. Sukhdev Singh Card */}
+            <div className="bg-white dark:bg-zinc-900/50 rounded-[4rem] p-12 border border-zinc-100 dark:border-zinc-800 relative text-left transition-all duration-300 hover:shadow-2xl dark:hover:shadow-[0_0_40px_rgba(132,204,22,0.15)] dark:hover:border-lime-500/30">
                <div className="w-20 h-20 bg-[#84CC16] rounded-3xl flex items-center justify-center shadow-lg mb-8">
                  <UserCircle2 className="w-12 h-12 text-zinc-900" />
                </div>
                <h3 className="text-3xl font-black text-zinc-900 dark:text-zinc-100 mb-2">Dr. Sukhdev Singh</h3>
                <p className="text-[#84CC16] font-bold text-lg mb-8 uppercase tracking-widest">Director | PhD (IIT Patna)</p>
-               <p className="text-gray-600 dark:text-zinc-400 text-lg leading-relaxed mb-6 font-medium">
+               <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed mb-6 font-medium">
                  Experienced academic and researcher with over 8 years in higher education. Holds strong expertise in statistical modeling, estimation, and data-driven problem solving.
                </p>
-               <ul className="space-y-3 text-gray-500 dark:text-zinc-500 font-bold">
+               <ul className="space-y-3 text-zinc-500 dark:text-zinc-500 font-bold">
                  <li className="flex items-center"><CircleDot className="w-4 h-4 mr-3 text-[#84CC16]" /> Author of 20+ research publications</li>
                  <li className="flex items-center"><CircleDot className="w-4 h-4 mr-3 text-[#84CC16]" /> CSIR Junior and Senior Research Fellow</li>
                  <li className="flex items-center"><CircleDot className="w-4 h-4 mr-3 text-[#84CC16]" /> Expert in Research Planning & Partnerships</li>
                </ul>
             </div>
 
-            <div className="bg-zinc-50 dark:bg-black rounded-[4rem] p-12 relative text-zinc-900 dark:text-white text-left shadow-2xl border border-zinc-100 dark:border-zinc-800 transition-colors overflow-hidden">
+            {/* Dr. Sangita Roy Card - Fixed for Theme Responsiveness and Glow */}
+            <div className="bg-white dark:bg-zinc-900/50 rounded-[4rem] p-12 border border-zinc-100 dark:border-zinc-800 relative text-left transition-all duration-300 shadow-2xl hover:shadow-2xl dark:hover:shadow-[0_0_40px_rgba(132,204,22,0.15)] dark:hover:border-lime-500/30 overflow-hidden">
                <div className="w-20 h-20 bg-[#84CC16]/20 dark:bg-white/10 rounded-3xl flex items-center justify-center shadow-lg mb-8">
                  <UserCircle2 className="w-12 h-12 text-[#84CC16]" />
                </div>
                <h3 className="text-3xl font-black mb-2 text-zinc-900 dark:text-zinc-100">Dr. Sangita Roy</h3>
                <p className="text-[#84CC16] font-bold text-lg mb-8 uppercase tracking-widest">Director | PhD (IIT Patna)</p>
-               <p className="text-gray-600 dark:text-zinc-400 text-lg leading-relaxed mb-6 font-medium">
+               <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed mb-6 font-medium">
                  Accomplished academic with expertise in Computer Science, Cybersecurity, and Blockchain. Currently Assistant Professor at Thapar Institute.
                </p>
-               <ul className="space-y-3 text-gray-500 dark:text-zinc-500 font-bold">
+               <ul className="space-y-3 text-zinc-500 dark:text-zinc-500 font-bold">
                  <li className="flex items-center"><CircleDot className="w-4 h-4 mr-3 text-[#84CC16]" /> PhD from IIT Patna</li>
                  <li className="flex items-center"><CircleDot className="w-4 h-4 mr-3 text-[#84CC16]" /> Former Senior Scientist at IIT Bombay</li>
                  <li className="flex items-center"><CircleDot className="w-4 h-4 mr-3 text-[#84CC16]" /> Postdoc at Tel Aviv University, Israel</li>

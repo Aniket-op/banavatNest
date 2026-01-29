@@ -13,15 +13,16 @@ const DomainCard: React.FC<{ item: any; idx: number }> = ({ item, idx }) => {
       whileHover={{ y: -6, scale: 1.01 }}
       transition={{ delay: idx * 0.04, duration: 0.25, ease: "easeOut" }}
       className={`
-        group relative rounded-[2.5rem] p-8 md:p-10 transition-all duration-200
+        group relative rounded-[2.5rem] p-8 md:p-10 transition-all duration-300
         bg-white dark:bg-[#18181B] text-zinc-900 dark:text-white 
         border border-gray-100 dark:border-zinc-800/60 shadow-sm hover:shadow-2xl 
+        dark:hover:shadow-[0_0_40px_rgba(132,204,22,0.15)] dark:hover:border-[#84CC16]/30
         overflow-hidden h-[300px] flex flex-col items-start text-left
       `}
     >
       {/* Reference-inspired Glow Effect */}
       <div
-        className={`absolute inset-0 opacity-0 group-hover:opacity-15 blur-[50px] transition-opacity duration-300
+        className={`absolute inset-0 opacity-0 group-hover:opacity-15 dark:group-hover:opacity-20 blur-[60px] transition-opacity duration-300
           bg-gradient-to-br ${item.accent} -translate-y-1/2 -translate-x-1/2`}
       />
       
@@ -156,28 +157,28 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Mission & Vision Section */}
-      <section className="py-32 bg-zinc-900 dark:bg-black overflow-hidden relative border-y border-zinc-800">
+      {/* Mission & Vision Section - Fixed for Light Mode */}
+      <section className="py-32 bg-white dark:bg-black overflow-hidden relative border-y border-gray-100 dark:border-zinc-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5 text-left">
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-6">Creation and <span className="text-[#84CC16]">Nurturing.</span></h2>
+              <h2 className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tighter mb-6">Creation and <span className="text-[#84CC16]">Nurturing.</span></h2>
               <div className="w-16 h-1 bg-[#84CC16] mb-6" />
-              <p className="text-lg text-zinc-400 font-medium leading-relaxed">
+              <p className="text-lg text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed">
                 Thoughtfully building and carefully growing ideas into impactful industrial and societal innovations.
               </p>
             </div>
             <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
                <motion.div 
                  whileHover={{ y: -5 }}
-                 className="bg-zinc-800 dark:bg-zinc-900/50 p-12 rounded-[3rem] border border-zinc-700/50 text-left transition-all"
+                 className="bg-zinc-50 dark:bg-zinc-800 p-12 rounded-[3rem] border border-gray-100 dark:border-zinc-700/50 text-left transition-all shadow-sm dark:hover:shadow-[0_0_40px_rgba(132,204,22,0.1)]"
                >
                  <div className="text-[#84CC16] font-black text-xs uppercase tracking-widest mb-4">Our Mission</div>
-                 <p className="text-xl font-bold text-white leading-tight">Shaping curiosity-driven concepts into innovative, practical, and scalable solutions through R&D.</p>
+                 <p className="text-xl font-bold text-zinc-900 dark:text-white leading-tight">Shaping curiosity-driven concepts into innovative, practical, and scalable solutions through R&D.</p>
                </motion.div>
                <motion.div 
                  whileHover={{ y: -5 }}
-                 className="bg-[#84CC16] p-12 rounded-[3rem] text-left transition-all"
+                 className="bg-[#84CC16] p-12 rounded-[3rem] text-left transition-all shadow-lg"
                >
                  <div className="text-[#5D3A1A] font-black text-xs uppercase tracking-widest mb-4">Our Vision</div>
                  <p className="text-xl font-bold text-zinc-900 leading-tight">Becoming a research-driven ecosystem that nurtures ideas from curiosity to lasting global impact.</p>
@@ -210,7 +211,7 @@ const Home = () => {
                 whileHover={{ y: -8 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3 }}
-                className={`p-12 rounded-[3rem] border border-gray-100 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 shadow-sm hover:shadow-xl transition-all duration-300 text-left group`}
+                className={`p-12 rounded-[3rem] border border-gray-100 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 shadow-sm hover:shadow-xl dark:hover:shadow-[0_0_40px_rgba(132,204,22,0.1)] transition-all duration-300 text-left group`}
               >
                 <div className="w-16 h-16 bg-gray-50 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mb-10 group-hover:scale-105 transition-transform">
                   {item.icon}

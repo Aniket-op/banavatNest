@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Microscope, Code2, Users2, Zap, BrainCircuit, GlobeLock, Cpu, Tractor } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -115,7 +114,7 @@ const Services = () => {
               <motion.div 
                 key={idx}
                 whileHover={{ y: -6 }}
-                className="bg-white dark:bg-zinc-900/50 p-8 rounded-[2rem] border border-gray-100 dark:border-zinc-800 text-left group transition-all"
+                className="bg-white dark:bg-zinc-900/50 p-8 rounded-[2rem] border border-gray-100 dark:border-zinc-800 text-left group transition-all shadow-sm hover:shadow-lg"
               >
                 <div className={`w-14 h-14 bg-gradient-to-br ${domain.iconGradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform shadow-sm`}>
                   <div className="text-white">{domain.icon}</div>
@@ -129,6 +128,4 @@ const Services = () => {
       </section>
     </div>
   );
-};
-
-export default Services;
+}; export default Services;

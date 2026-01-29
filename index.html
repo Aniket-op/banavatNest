@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +13,7 @@
             colors: {
               lime: {
                 400: '#84CC16',
+                500: '#65A30D',
               }
             }
           }
@@ -29,10 +29,21 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         .grid-bg {
-            background-image: radial-gradient(var(--grid-color, #e5e7eb) 1px, transparent 1px);
-            background-size: 40px 40px;
+            position: relative;
+            z-index: 0;
         }
-        .dark .grid-bg {
+        .grid-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* Increased dot size from 1px to 1.5px and adjusted colors for better visibility */
+            background-image: radial-gradient(var(--grid-color, #d1d5db) 1.5px, transparent 1.5px);
+            background-size: 40px 40px;
+            z-index: -10;
+            pointer-events: none;
+        }
+        .dark .grid-bg::before {
+            /* Lightened the dots for dark mode to be more visible (Zinc-800 equivalent) */
             --grid-color: #27272a;
         }
         ::selection {
@@ -59,18 +70,13 @@
             background: #a1a1aa;
         }
         
-        /* Glass reflection effect for dark mode cards */
-        .glass-glow {
-          position: relative;
+        /* Dark Mode Glowing Utility */
+        .glow-hover {
+            transition: all 0.3s ease;
         }
-        .dark .glass-glow::before {
-          content: '';
-          position: absolute;
-          inset: -1px;
-          background: linear-gradient(45deg, transparent, rgba(132, 204, 22, 0.3), transparent);
-          border-radius: inherit;
-          z-index: -1;
-          pointer-events: none;
+        .dark .glow-hover:hover {
+            box-shadow: 0 0 40px rgba(132, 204, 22, 0.12);
+            border-color: rgba(132, 204, 22, 0.3);
         }
     </style>
 <script type="importmap">

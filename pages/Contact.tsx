@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, MapPin, Send, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -98,6 +97,4 @@ const Contact = () => {
       </section>
     </div>
   );
-};
-
-export default Contact;
+}; export default Contact;
