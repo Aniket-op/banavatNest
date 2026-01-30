@@ -19,7 +19,8 @@ const ScrollToTop = () => {
   return null;
 };
 
-const PageWrapper = ({ children }: { children: React.ReactNode }) => (
+// Fix: Added React.FC type to handle children correctly in TypeScript
+const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <motion.div
     initial={{ opacity: 0, y: 10 }}
     animate={{ opacity: 1, y: 0 }}

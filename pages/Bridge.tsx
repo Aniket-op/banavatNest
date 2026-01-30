@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, Link as LinkIcon, Briefcase, GraduationCap, Building } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,97 +5,80 @@ import { motion } from 'framer-motion';
 
 const Bridge = () => {
   return (
-    <div className="pb-24">
-      <header className="bg-zinc-50 pt-24 pb-20 border-b border-gray-100 grid-bg">
+    <div className="pb-24 dark:bg-[#09090b] transition-colors duration-300">
+      <header className="bg-zinc-50 dark:bg-zinc-900/40 pt-32 pb-20 border-b border-gray-100 dark:border-zinc-800 grid-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl text-left">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-zinc-900 mb-8 leading-tight tracking-tighter">
-              Academia-Industry <span className="text-[#84CC16]">Bridge.</span>
+            <h1 className="text-6xl md:text-8xl font-extrabold text-zinc-900 dark:text-zinc-100 mb-8 leading-tight tracking-tighter">
+              The <span className="text-[#84CC16]">Bridge.</span>
             </h1>
-            <p className="text-xl text-gray-500 font-medium leading-relaxed">
-              We connect theoretical knowledge with practical deployment, creating a structured ecosystem for students, faculty, and industry partners.
+            <p className="text-xl text-gray-500 dark:text-zinc-400 font-medium leading-relaxed">
+              Connecting academic rigor with industrial relevance. We translate high-level research into deployable solutions.
             </p>
           </div>
         </div>
       </header>
 
-      {/* Model Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-[#09090b]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
              <motion.div 
-               initial={{ opacity: 0, x: -30 }}
+               initial={{ opacity: 0, x: -20 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
-               className="bg-[#84CC16] p-12 rounded-[3rem] relative shadow-2xl text-left"
+               className="bg-[#84CC16] p-10 rounded-[2.5rem] relative shadow-2xl text-left"
              >
-                <div className="absolute top-8 right-8 text-zinc-900 opacity-20">
-                  <LinkIcon size={120} />
+                <div className="absolute top-8 right-8 text-zinc-900 opacity-5">
+                  <LinkIcon size={100} />
                 </div>
-                <h2 className="text-4xl font-black text-[#5D3A1A] mb-6">Collaboration Model</h2>
-                <p className="text-[#5D3A1A] text-lg font-medium leading-relaxed mb-8">
-                  Our framework connects stakeholders through well-defined roles and outcomes. We adopt a problem-driven approach where industry challenges are mapped to student projects.
+                <h2 className="text-3xl font-black text-[#5D3A1A] mb-4 uppercase">Collaboration Model</h2>
+                <p className="text-[#5D3A1A] text-base font-medium leading-relaxed mb-8 opacity-90">
+                  Mapping industry challenges to high-potential student projects under expert faculty supervision.
                 </p>
-                <div className="space-y-4">
-                  {['Joint Supervision', 'Milestone-based Projects', 'Technical Mentoring', 'TRL Alignment'].map((item, i) => (
-                    <div key={i} className="flex items-center space-x-3 bg-white/30 p-4 rounded-2xl border border-white/40">
-                      <div className="w-2 h-2 rounded-full bg-[#5D3A1A]"></div>
-                      <span className="font-bold text-[#5D3A1A]">{item}</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {['Joint Supervision', 'POC Development', 'Domain Mentoring', 'IP Alignment'].map((item, i) => (
+                    <div key={i} className="flex items-center space-x-3 bg-white/20 p-3.5 rounded-xl border border-white/30 backdrop-blur-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#5D3A1A]"></div>
+                      <span className="font-bold text-sm text-[#5D3A1A]">{item}</span>
                     </div>
                   ))}
                 </div>
              </motion.div>
 
              <div className="text-left">
-                <h3 className="text-4xl font-black text-zinc-900 mb-10 tracking-tight">Empowering Stakeholders</h3>
-                <div className="space-y-12">
-                   <div className="flex gap-6">
-                      <div className="flex-shrink-0 w-14 h-14 bg-blue-50 text-blue-600 rounded-[1.25rem] flex items-center justify-center shadow-inner">
-                        <GraduationCap className="w-7 h-7" />
-                      </div>
-                      <div>
-                        <h4 className="text-2xl font-bold text-zinc-900 mb-2">Opportunities for Students</h4>
-                        <p className="text-zinc-500 font-medium leading-relaxed">
-                          Research internships, innovation challenges, and postgraduate prototype development aligned with industry needs (UG / PG / PhD).
-                        </p>
-                      </div>
-                   </div>
-                   <div className="flex gap-6">
-                      <div className="flex-shrink-0 w-14 h-14 bg-purple-50 text-purple-600 rounded-[1.25rem] flex items-center justify-center shadow-inner">
-                        <Briefcase className="w-7 h-7" />
-                      </div>
-                      <div>
-                        <h4 className="text-2xl font-bold text-zinc-900 mb-2">Faculty & Researcher Engagement</h4>
-                        <p className="text-zinc-500 font-medium leading-relaxed">
-                          Central roles as domain experts and PIs. Leading interdisciplinary teams and contributing to grant proposals and pilot deployments.
-                        </p>
-                      </div>
-                   </div>
-                   <div className="flex gap-6">
-                      <div className="flex-shrink-0 w-14 h-14 bg-zinc-900 text-[#84CC16] rounded-[1.25rem] flex items-center justify-center shadow-inner">
-                        <Building className="w-7 h-7" />
-                      </div>
-                      <div>
-                        <h4 className="text-2xl font-bold text-zinc-900 mb-2">Industry Partnerships (PoCs)</h4>
-                        <p className="text-zinc-500 font-medium leading-relaxed">
-                          Demonstrating technical feasibility through rapid prototyping, academic validation, and access to skilled talent.
-                        </p>
-                      </div>
-                   </div>
+                <h3 className="text-3xl font-black text-zinc-900 dark:text-zinc-100 mb-10 tracking-tight uppercase">Stakeholder Roles</h3>
+                <div className="space-y-10">
+                   {[
+                     { icon: <GraduationCap />, color: "bg-blue-50 dark:bg-blue-900/20 text-blue-600", title: "Students", text: "Research internships and postgraduate prototype development." },
+                     { icon: <Briefcase />, color: "bg-purple-50 dark:bg-purple-900/20 text-purple-600", title: "Faculty", text: "Domain expertise and mentorship for industrial challenges." },
+                     { icon: <Building />, color: "bg-zinc-100 dark:bg-zinc-800 text-[#84CC16]", title: "Industry", text: "Direct access to technical feasibility and skilled talent." }
+                   ].map((item, idx) => (
+                     <div key={idx} className="flex gap-5 group">
+                        <div className={`shrink-0 w-12 h-12 ${item.color} rounded-xl flex items-center justify-center transition-transform group-hover:scale-105`}>
+                          {/* Fix: use any for ReactElement props to allow className on cloneElement */}
+                          {React.cloneElement(item.icon as React.ReactElement<any>, { className: "w-6 h-6" })}
+                        </div>
+                        <div>
+                          <h4 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-1">{item.title}</h4>
+                          <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium">{item.text}</p>
+                        </div>
+                     </div>
+                   ))}
                 </div>
              </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-zinc-50 border-t border-gray-100">
+      <section className="py-24 bg-zinc-50 dark:bg-zinc-900/30 border-t border-gray-100 dark:border-zinc-800">
         <div className="max-w-4xl mx-auto px-4 text-center">
-           <h2 className="text-4xl font-black text-zinc-900 mb-8 tracking-tight">Start Your Collaborative Journey</h2>
-           <p className="text-gray-500 mb-12 text-xl font-medium">Whether you are a student seeking research exposure or an industry partner with a complex problem, we are here to bridge the gap.</p>
-           <Link to="/contact" className="bg-[#5D3A1A] text-white px-12 py-5 rounded-full font-black text-xl hover:scale-105 transition-transform inline-flex items-center shadow-xl shadow-zinc-900/10">
-             Connect With Us <ArrowRight className="ml-3 w-6 h-6" />
-           </Link>
+           <h2 className="text-3xl font-black text-zinc-900 dark:text-zinc-100 mb-6 tracking-tight">Ready to Collaborate?</h2>
+           <p className="text-gray-500 dark:text-zinc-400 mb-10 text-lg font-medium">Whether you're a student seeking impact or a company seeking solutions, let's talk.</p>
+           <motion.div whileHover={{ scale: 1.05 }} className="inline-block">
+             <Link to="/contact" className="bg-[#5D3A1A] dark:bg-zinc-100 text-white dark:text-zinc-900 px-10 py-4 rounded-full font-black text-lg transition-all inline-flex items-center shadow-lg">
+               Connect Now <ArrowRight className="ml-2 w-5 h-5" />
+             </Link>
+           </motion.div>
         </div>
       </section>
     </div>
