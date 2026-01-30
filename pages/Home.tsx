@@ -115,7 +115,7 @@ const Home = () => {
                 className="text-6xl md:text-8xl lg:text-[100px] font-black text-zinc-900 dark:text-zinc-100 tracking-tighter leading-[0.9] mb-12"
               >
                 Build with <br/>
-                <span className="text-zinc-300 dark:text-zinc-800">Purpose.</span> <br/>
+                <span className="text-zinc-500 dark:text-zinc-500">Purpose.</span> <br/>
                 Nurture to <br/>
                 <span className="text-[#84CC16]">Impact.</span>
               </motion.h1>

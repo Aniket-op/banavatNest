@@ -1,5 +1,4 @@
-
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 const FluidCursor: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -8,7 +7,7 @@ const FluidCursor: React.FC = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let width = window.innerWidth;
@@ -18,7 +17,7 @@ const FluidCursor: React.FC = () => {
 
     let mouse = { x: width / 2, y: height / 2 };
     let pos = { x: width / 2, y: height / 2 };
-    
+
     const friction = 0.88;
     const speed = 0.12;
     let vx = 0;
@@ -36,8 +35,8 @@ const FluidCursor: React.FC = () => {
       canvas.height = height;
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("resize", handleResize);
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
@@ -49,19 +48,23 @@ const FluidCursor: React.FC = () => {
       pos.x += vx;
       pos.y += vy;
 
-      const isDarkMode = document.documentElement.classList.contains('dark');
+      const isDarkMode = document.documentElement.classList.contains("dark");
       const baseAlpha = isDarkMode ? 0.45 : 0.35;
       const coreAlpha = isDarkMode ? 0.6 : 0.45;
 
       // Glow intensity adjustments for dark mode
       const gradient = ctx.createRadialGradient(
-        pos.x, pos.y, 0,
-        pos.x, pos.y, isDarkMode ? 500 : 450
+        pos.x,
+        pos.y,
+        0,
+        pos.x,
+        pos.y,
+        isDarkMode ? 500 : 450,
       );
 
-      gradient.addColorStop(0, `rgba(132, 204, 22, ${baseAlpha})`); 
+      gradient.addColorStop(0, `rgba(132, 204, 22, ${baseAlpha})`);
       gradient.addColorStop(0.4, `rgba(132, 204, 22, ${baseAlpha * 0.4})`);
-      gradient.addColorStop(1, 'rgba(132, 204, 22, 0)');
+      gradient.addColorStop(1, "rgba(132, 204, 22, 0)");
 
       ctx.fillStyle = gradient;
       ctx.beginPath();
@@ -69,13 +72,17 @@ const FluidCursor: React.FC = () => {
       ctx.fill();
 
       const coreGradient = ctx.createRadialGradient(
-        pos.x, pos.y, 0,
-        pos.x, pos.y, 120
+        pos.x,
+        pos.y,
+        0,
+        pos.x,
+        pos.y,
+        120,
       );
       coreGradient.addColorStop(0, `rgba(132, 204, 22, ${coreAlpha})`);
       coreGradient.addColorStop(0.6, `rgba(132, 204, 22, ${coreAlpha * 0.3})`);
-      coreGradient.addColorStop(1, 'rgba(132, 204, 22, 0)');
-      
+      coreGradient.addColorStop(1, "rgba(132, 204, 22, 0)");
+
       ctx.fillStyle = coreGradient;
       ctx.beginPath();
       ctx.arc(pos.x, pos.y, 120, 0, Math.PI * 2);
