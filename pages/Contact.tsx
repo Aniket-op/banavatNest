@@ -50,12 +50,12 @@ const Contact = () => {
                        <div className="shrink-0 p-4 bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 rounded-2xl group-hover:scale-110 transition-transform">
                           <MapPin />
                        </div>
-                       <div>
+                       {/* <div>
                           <p className="text-[10px] font-black text-gray-400 dark:text-zinc-400 uppercase tracking-[0.2em] mb-1">Location</p>
                           <p className="text-sm font-bold text-zinc-900 dark:text-zinc-100 leading-snug">
                             Sutahata, East Midnapore,<br/>West Bengal, India – 721645
                           </p>
-                       </div>
+                       </div> */}
                     </div>
                   </div>
                </motion.div>
