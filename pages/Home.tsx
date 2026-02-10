@@ -121,7 +121,7 @@ const Home = () => {
       </section>
 
       {/* Mission & Vision Section - Fixed for Light Mode */}
-      <section className="py-32 bg-white dark:bg-black overflow-hidden relative border-y border-gray-100 dark:border-zinc-800 transition-colors duration-300">
+      {/* <section className="py-32 bg-white dark:bg-black overflow-hidden relative border-y border-gray-100 dark:border-zinc-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5 text-left">
@@ -149,10 +149,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Bridge Preview Section */}
-      <section className="py-32 bg-white dark:bg-[#0c0c0e] transition-colors">
+      {/* <section className="py-32 bg-white dark:bg-[#0c0c0e] transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24 max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-zinc-100 mb-8 tracking-tighter">Bridging the Gap</h2>
@@ -185,7 +185,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
