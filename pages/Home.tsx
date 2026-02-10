@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import FluidCursor from '../components/FluidCursor';
 import DomainCarousel from '../components/DomainCarousel';
-// @ts-ignore
 import image_agriculture from '../assets/agriculture.png';
 import image_ai from '../assets/Ai.png';
 import image_cyber from '../assets/cyberSecure.png';
