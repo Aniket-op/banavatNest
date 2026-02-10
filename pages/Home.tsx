@@ -3,50 +3,13 @@ import { ArrowRight, Brain, Shield, Zap, Microscope, GraduationCap, Building2 } 
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import FluidCursor from '../components/FluidCursor';
+import DomainCarousel from '../components/DomainCarousel';
+// @ts-ignore
+import image_agriculture from '../assets/agriculture.png';
+import image_ai from '../assets/Ai.png';
+import image_cyber from '../assets/cyberSecure.png';
+import image_smart from '../assets/smart.png';
 
-const DomainCard: React.FC<{ item: any; idx: number }> = ({ item, idx }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -6, scale: 1.01 }}
-      transition={{ delay: idx * 0.04, duration: 0.25, ease: "easeOut" }}
-      className={`
-        group relative rounded-[2.5rem] p-8 md:p-10 transition-all duration-300
-        bg-white dark:bg-[#18181B] text-zinc-900 dark:text-white 
-        border border-gray-100 dark:border-zinc-800/60 shadow-sm hover:shadow-2xl 
-        dark:hover:shadow-[0_0_40px_rgba(132,204,22,0.15)] dark:hover:border-[#84CC16]/30
-        overflow-hidden h-[300px] flex flex-col items-start text-left
-      `}
-    >
-      {/* Reference-inspired Glow Effect */}
-      <div
-        className={`absolute inset-0 opacity-0 group-hover:opacity-15 dark:group-hover:opacity-20 blur-[60px] transition-opacity duration-300
-          bg-gradient-to-br ${item.accent} -translate-y-1/2 -translate-x-1/2`}
-      />
-      
-      {/* Icon Container with Reference Icon Gradient Styles */}
-      <div className={`
-        relative z-10 w-14 h-14 rounded-[1.2rem] flex items-center justify-center mb-8
-        bg-gradient-to-br ${item.iconGradient} shadow-lg transform transition-transform duration-200 group-hover:scale-110
-      `}>
-        <div className="text-white">
-          {item.icon}
-        </div>
-      </div>
-
-      <div className="relative z-10 space-y-2">
-        <h3 className="text-xl font-black tracking-tight">{item.title}</h3>
-        <p className="text-sm font-medium leading-relaxed line-clamp-3 text-gray-500 dark:text-zinc-400">
-          {item.desc}
-        </p>
-      </div>
-
-      <div className={`absolute bottom-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-300 bg-gradient-to-r ${item.accent}`} />
-    </motion.div>
-  );
-};
 
 const Home = () => {
   const { scrollY } = useScroll();
@@ -55,6 +18,7 @@ const Home = () => {
   const domains = [
     {
       title: "AI & ML",
+      url: image_ai,
       desc: "Artificial Intelligence, Machine Learning & Data Science",
       icon: <Brain className="w-7 h-7" />,
       accent: "from-[#84CC16] to-cyan-500",
@@ -62,6 +26,7 @@ const Home = () => {
     },
     {
       title: "Cybersecurity",
+      url: image_cyber,
       desc: "Cybersecurity, Internet of Things & Blockchain",
       icon: <Shield className="w-7 h-7" />,
       accent: "from-emerald-500 to-[#84CC16]",
@@ -69,6 +34,7 @@ const Home = () => {
     },
     {
       title: "Smart Systems",
+      url: image_smart,
       desc: "Healthcare & Sustainability focus areas",
       icon: <Microscope className="w-7 h-7" />,
       accent: "from-purple-500 to-pink-500",
@@ -76,6 +42,7 @@ const Home = () => {
     },
     {
       title: "Agriculture",
+      url: image_agriculture,
       desc: "Smart Farming and Precision Agriculture",
       icon: <Zap className="w-7 h-7" />,
       accent: "from-amber-500 to-[#84CC16]",
@@ -90,15 +57,15 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden grid-bg pt-24 pb-24 md:pt-36 md:pb-40 dark:bg-[#09090b]">
         <div className="hidden dark:block">
-          <motion.div 
+          <motion.div
             animate={{ scale: [1, 1.05, 1], opacity: [0.08, 0.12, 0.08] }}
             transition={{ duration: 6, repeat: Infinity }}
             className="absolute top-[15%] right-[5%] w-[35rem] h-[35rem] bg-[#84CC16]/10 blur-[130px] rounded-full pointer-events-none"
           />
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:text-left">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-lime-50 dark:bg-lime-900/10 border border-lime-100/50 dark:border-lime-500/20 mb-10 shadow-sm"
@@ -106,20 +73,20 @@ const Home = () => {
             <span className="flex h-2 w-2 rounded-full bg-[#84CC16] animate-pulse"></span>
             <span className="text-[10px] font-black text-[#65A30D] dark:text-[#84CC16] uppercase tracking-[0.2em]">Research-Led Innovation Ecosystem</span>
           </motion.div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
             <div className="max-w-3xl">
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-6xl md:text-8xl lg:text-[100px] font-black text-zinc-900 dark:text-zinc-100 tracking-tighter leading-[0.9] mb-12"
+                className="text-5xl md:text-7xl lg:text-[80px] font-black text-zinc-900 dark:text-zinc-100 tracking-tighter leading-[0.9] mb-12"
               >
-                Build with <br/>
-                <span className="text-zinc-500 dark:text-zinc-500">Purpose.</span> <br/>
-                Nurture to <br/>
-                <span className="text-[#84CC16]">Impact.</span>
+                Build with <br />
+                <span className="text-zinc-500 dark:text-zinc-500">Purpose</span> <br />
+                Nurture to <br />
+                <span className="text-[#84CC16]">Impact</span>
               </motion.h1>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
@@ -127,7 +94,7 @@ const Home = () => {
               >
                 BanavatNest transforms curiosity into practical, scalable, and impactful solutions through systematic investigation.
               </motion.p>
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -141,17 +108,14 @@ const Home = () => {
                 </Link>
               </motion.div>
             </div>
-
-            <motion.div 
+            <motion.div
               style={{ y: y2 }}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+              className="w-full lg:w-[120%]" // Make it slightly wider to peek
             >
-              {domains.map((item, idx) => (
-                <DomainCard key={idx} item={item} idx={idx} />
-              ))}
+              <DomainCarousel items={domains} />
             </motion.div>
           </div>
         </div>
@@ -169,20 +133,20 @@ const Home = () => {
               </p>
             </div>
             <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
-               <motion.div 
-                 whileHover={{ y: -5 }}
-                 className="bg-zinc-50 dark:bg-zinc-800 p-12 rounded-[3rem] border border-gray-100 dark:border-zinc-700/50 text-left transition-all shadow-sm dark:hover:shadow-[0_0_40px_rgba(132,204,22,0.1)]"
-               >
-                 <div className="text-[#84CC16] font-black text-xs uppercase tracking-widest mb-4">Our Mission</div>
-                 <p className="text-xl font-bold text-zinc-900 dark:text-white leading-tight">Shaping curiosity-driven concepts into innovative, practical, and scalable solutions through R&D.</p>
-               </motion.div>
-               <motion.div 
-                 whileHover={{ y: -5 }}
-                 className="bg-[#84CC16] p-12 rounded-[3rem] text-left transition-all shadow-lg"
-               >
-                 <div className="text-[#5D3A1A] font-black text-xs uppercase tracking-widest mb-4">Our Vision</div>
-                 <p className="text-xl font-bold text-zinc-900 leading-tight">Becoming a research-driven ecosystem that nurtures ideas from curiosity to lasting global impact.</p>
-               </motion.div>
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-zinc-50 dark:bg-zinc-800 p-12 rounded-[3rem] border border-gray-100 dark:border-zinc-700/50 text-left transition-all shadow-sm dark:hover:shadow-[0_0_40px_rgba(132,204,22,0.1)]"
+              >
+                <div className="text-[#84CC16] font-black text-xs uppercase tracking-widest mb-4">Our Mission</div>
+                <p className="text-xl font-bold text-zinc-900 dark:text-white leading-tight">Shaping curiosity-driven concepts into innovative, practical, and scalable solutions through R&D.</p>
+              </motion.div>
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-[#84CC16] p-12 rounded-[3rem] text-left transition-all shadow-lg"
+              >
+                <div className="text-[#5D3A1A] font-black text-xs uppercase tracking-widest mb-4">Our Vision</div>
+                <p className="text-xl font-bold text-zinc-900 leading-tight">Becoming a research-driven ecosystem that nurtures ideas from curiosity to lasting global impact.</p>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -192,7 +156,7 @@ const Home = () => {
       <section className="py-32 bg-white dark:bg-[#0c0c0e] transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-zinc-100 mb-8 tracking-tighter">Bridging the Gap.</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-zinc-100 mb-8 tracking-tighter">Bridging the Gap</h2>
             <p className="text-xl text-gray-500 dark:text-zinc-400 font-medium leading-relaxed">
               Acting as a dynamic bridge between academia, industry, and society to address real-world challenges through co-creation.
             </p>
@@ -204,7 +168,7 @@ const Home = () => {
               { icon: <Microscope className="w-10 h-10 text-blue-600" />, title: "Faculty", desc: "Mentors and domain experts guiding projects with academic rigor." },
               { icon: <Building2 className="w-10 h-10 text-zinc-800 dark:text-zinc-200" />, title: "Industry", desc: "Innovation-driven solutions providing technical feasibility and prototyping." },
             ].map((item, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

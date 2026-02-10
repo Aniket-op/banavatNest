@@ -79,8 +79,8 @@ const Navbar = () => {
                                 {link.subItems ? (
                                     <button
                                         className={`text-sm font-bold transition-all flex items-center gap-1 py-1 ${location.pathname.startsWith(link.path)
-                                                ? 'text-[#84CC16]'
-                                                : 'text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100'
+                                            ? 'text-[#84CC16]'
+                                            : 'text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100'
                                             }`}
                                     >
                                         {link.name}
@@ -90,8 +90,8 @@ const Navbar = () => {
                                     <Link
                                         to={link.path}
                                         className={`text-sm font-bold transition-all relative py-1 ${location.pathname === link.path
-                                                ? 'text-[#84CC16]'
-                                                : 'text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100'
+                                            ? 'text-[#84CC16]'
+                                            : 'text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100'
                                             }`}
                                     >
                                         {link.name}
