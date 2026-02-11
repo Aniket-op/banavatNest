@@ -9,7 +9,7 @@ const OurName = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-4xl">
                         <h1 className="text-5xl md:text-7xl font-black text-zinc-900 dark:text-zinc-100 mb-8 tracking-tighter leading-tight">
-                            Our <span className="text-[#84CC16]">Name.</span>
+                            Our <span className="text-[#84CC16]">Name</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-500 dark:text-zinc-400 font-medium leading-relaxed">
                             Symbolizing the philosophy of creation and nurturing innovation.

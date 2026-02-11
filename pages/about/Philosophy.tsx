@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CircleDot } from 'lucide-react';
+
 
 const Philosophy = () => {
     const banavatValues = [
@@ -26,7 +26,7 @@ const Philosophy = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-4xl">
                         <h1 className="text-5xl md:text-7xl font-black text-zinc-900 dark:text-zinc-100 mb-8 tracking-tighter leading-tight">
-                            Philosophy <span className="text-[#84CC16]">& Values.</span>
+                            Philosophy <span className="text-[#84CC16]">& Values</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-500 dark:text-zinc-400 font-medium leading-relaxed">
                             A unified philosophy where ideas are built with purpose and nurtured with care.

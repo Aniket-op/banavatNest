@@ -57,7 +57,7 @@ const FocusAreas = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-6xl md:text-8xl font-black text-zinc-900 dark:text-zinc-100 mb-8 tracking-tighter"
                     >
-                        Focus <span className="text-gray-200 dark:text-zinc-800">Areas.</span>
+                        Focus <span className="text-[#84CC16]">Areas</span>
                     </motion.h1>
                     <p className="text-xl md:text-2xl text-gray-400 dark:text-zinc-400 font-medium max-w-3xl leading-relaxed">
                         From experimental development to market-ready prototypes, providing the technical foundation for innovation.

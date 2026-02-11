@@ -49,8 +49,9 @@ const FluidCursor: React.FC = () => {
       pos.y += vy;
 
       const isDarkMode = document.documentElement.classList.contains("dark");
-      const baseAlpha = isDarkMode ? 0.45 : 0.35;
-      const coreAlpha = isDarkMode ? 0.6 : 0.45;
+      // Much more subtle alpha for dark mode to avoid "muddy" look
+      const baseAlpha = isDarkMode ? 0.15 : 0.35;
+      const coreAlpha = isDarkMode ? 0.3 : 0.45;
 
       // Glow intensity adjustments for dark mode
       const gradient = ctx.createRadialGradient(
@@ -59,18 +60,23 @@ const FluidCursor: React.FC = () => {
         0,
         pos.x,
         pos.y,
-        isDarkMode ? 500 : 450,
+        isDarkMode ? 600 : 450, // Slightly larger spread in dark mode for softer light
       );
 
+      // Use a cleaner falloff
       gradient.addColorStop(0, `rgba(132, 204, 22, ${baseAlpha})`);
-      gradient.addColorStop(0.4, `rgba(132, 204, 22, ${baseAlpha * 0.4})`);
+      gradient.addColorStop(0.5, `rgba(132, 204, 22, ${baseAlpha * 0.2})`); // Moved stop to 0.5
       gradient.addColorStop(1, "rgba(132, 204, 22, 0)");
 
       ctx.fillStyle = gradient;
+      // Use 'screen' or 'lighter' to make it glow additivesly
+      ctx.globalCompositeOperation = isDarkMode ? 'screen' : 'source-over';
+
       ctx.beginPath();
-      ctx.arc(pos.x, pos.y, isDarkMode ? 500 : 450, 0, Math.PI * 2);
+      ctx.arc(pos.x, pos.y, isDarkMode ? 600 : 450, 0, Math.PI * 2);
       ctx.fill();
 
+      // Core glow
       const coreGradient = ctx.createRadialGradient(
         pos.x,
         pos.y,
@@ -80,13 +86,16 @@ const FluidCursor: React.FC = () => {
         120,
       );
       coreGradient.addColorStop(0, `rgba(132, 204, 22, ${coreAlpha})`);
-      coreGradient.addColorStop(0.6, `rgba(132, 204, 22, ${coreAlpha * 0.3})`);
+      coreGradient.addColorStop(0.6, `rgba(132, 204, 22, ${coreAlpha * 0.1})`);
       coreGradient.addColorStop(1, "rgba(132, 204, 22, 0)");
 
       ctx.fillStyle = coreGradient;
       ctx.beginPath();
       ctx.arc(pos.x, pos.y, 120, 0, Math.PI * 2);
       ctx.fill();
+
+      // Reset composite operation
+      ctx.globalCompositeOperation = 'source-over';
 
       requestAnimationFrame(render);
     };

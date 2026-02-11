@@ -30,7 +30,7 @@ const Opportunities = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-3xl text-left">
                         <h1 className="text-6xl md:text-8xl font-extrabold text-zinc-900 dark:text-zinc-100 mb-8 leading-tight tracking-tighter">
-                            Student <span className="text-[#84CC16]">Growth.</span>
+                            Student <span className="text-[#84CC16]">Growth</span>
                         </h1>
                         <p className="text-xl text-gray-500 dark:text-zinc-400 font-medium leading-relaxed">
                             Creating research and innovation opportunities for students at all levels.

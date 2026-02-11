@@ -40,7 +40,7 @@ const Domains = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-6xl md:text-8xl font-black text-zinc-900 dark:text-zinc-100 mb-8 tracking-tighter"
                     >
-                        Key <span className="text-[#84CC16]">Domains.</span>
+                        Key <span className="text-[#84CC16]">Domains</span>
                     </motion.h1>
                     <p className="text-xl md:text-2xl text-gray-400 dark:text-zinc-400 font-medium max-w-3xl leading-relaxed">
                         Diverse expertise driving technological advancement across impactful sectors.
