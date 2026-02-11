@@ -1,14 +1,21 @@
-import React from 'react';
-import { ArrowRight, Brain, Shield, Zap, Microscope, GraduationCap, Building2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import FluidCursor from '../components/FluidCursor';
-import DomainCarousel from '../components/DomainCarousel';
-import image_agriculture from '../assets/agriculture.png';
-import image_ai from '../assets/Ai.png';
-import image_cyber from '../assets/cyberSecure.png';
-import image_smart from '../assets/smart.png';
-
+import React from "react";
+import {
+  ArrowRight,
+  Brain,
+  Shield,
+  Zap,
+  Microscope,
+  GraduationCap,
+  Building2,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
+import FluidCursor from "../components/FluidCursor";
+import DomainCarousel from "../components/DomainCarousel";
+import image_agriculture from "../assets/homepage/agriculture.png";
+import image_ai from "../assets/homepage/Ai.png";
+import image_cyber from "../assets/homepage/cyberSecure.png";
+import image_smart from "../assets/homepage/smart.png";
 
 const Home = () => {
   const { scrollY } = useScroll();
@@ -52,7 +59,6 @@ const Home = () => {
   return (
     <div className="relative">
       <FluidCursor />
-
       {/* Hero Section */}
       <section className="relative overflow-hidden grid-bg pt-24 pb-24 md:pt-36 md:pb-40 dark:bg-[#09090b]">
         <div className="hidden dark:block">
@@ -70,7 +76,9 @@ const Home = () => {
             className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-lime-50 dark:bg-lime-900/10 border border-lime-100/50 dark:border-lime-500/20 mb-10 shadow-sm"
           >
             <span className="flex h-2 w-2 rounded-full bg-[#84CC16] animate-pulse"></span>
-            <span className="text-[10px] font-black text-[#65A30D] dark:text-[#84CC16] uppercase tracking-[0.2em]">Research-Led Innovation Ecosystem</span>
+            <span className="text-[10px] font-black text-[#65A30D] dark:text-[#84CC16] uppercase tracking-[0.2em]">
+              Research-Led Innovation Ecosystem
+            </span>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
@@ -81,7 +89,10 @@ const Home = () => {
                 className="text-5xl md:text-7xl lg:text-[80px] font-black text-zinc-900 dark:text-zinc-100 tracking-tighter leading-[0.9] mb-12"
               >
                 Build with <br />
-                <span className="text-zinc-500 dark:text-zinc-500">Purpose</span> <br />
+                <span className="text-zinc-500 dark:text-zinc-500">
+                  Purpose
+                </span>{" "}
+                <br />
                 Nurture to <br />
                 <span className="text-[#84CC16]">Impact</span>
               </motion.h1>
@@ -91,7 +102,8 @@ const Home = () => {
                 transition={{ delay: 0.1 }}
                 className="text-xl md:text-2xl text-gray-500 dark:text-zinc-400 font-medium leading-relaxed mb-14 max-w-xl"
               >
-                BanavatNest transforms curiosity into practical, scalable, and impactful solutions through systematic investigation.
+                BanavatNest transforms curiosity into practical, scalable, and
+                impactful solutions through systematic investigation.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -99,10 +111,17 @@ const Home = () => {
                 transition={{ delay: 0.2 }}
                 className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
               >
-                <Link to="/services" className="bg-[#5D3A1A] text-white px-10 py-5 rounded-full font-black text-lg hover:bg-[#4B2C13] transition-all shadow-xl flex items-center justify-center hover:scale-[1.03] active:scale-95 group">
-                  What We Do <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <Link
+                  to="/services"
+                  className="bg-[#5D3A1A] text-white px-10 py-5 rounded-full font-black text-lg hover:bg-[#4B2C13] transition-all shadow-xl flex items-center justify-center hover:scale-[1.03] active:scale-95 group"
+                >
+                  What We Do{" "}
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/bridge" className="border-2 border-zinc-900 dark:border-zinc-700 bg-transparent text-zinc-900 dark:text-zinc-100 px-10 py-5 rounded-full font-black text-lg hover:bg-zinc-900 dark:hover:bg-zinc-700 hover:text-white transition-all flex items-center justify-center hover:scale-[1.03] active:scale-95">
+                <Link
+                  to="/bridge"
+                  className="border-2 border-zinc-900 dark:border-zinc-700 bg-transparent text-zinc-900 dark:text-zinc-100 px-10 py-5 rounded-full font-black text-lg hover:bg-zinc-900 dark:hover:bg-zinc-700 hover:text-white transition-all flex items-center justify-center hover:scale-[1.03] active:scale-95"
+                >
                   Our Bridge
                 </Link>
               </motion.div>
