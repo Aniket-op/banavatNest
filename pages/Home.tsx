@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import FluidCursor from "../components/FluidCursor";
 import DomainCarousel from "../components/DomainCarousel";
+import InfiniteUpdateBar from "../components/InfiniteUpdateBar";
 import image_agriculture from "../assets/homepage/agriculture.png";
 import image_ai from "../assets/homepage/Ai.png";
 import image_cyber from "../assets/homepage/cyberSecure.png";
@@ -56,11 +57,40 @@ const Home = () => {
     },
   ];
 
+  const updates = [
+    {
+      title: "🚀 BanavatNest 2.0 is now live! Explore our new research ecosystem.",
+      route: "/about",
+    },
+    {
+      title: "🏆 Upcoming Hackathon: 'Innovate against Climate Change' - Register by March 15th.",
+      route: "/news/hackathon-climate-change",
+    },
+    {
+      title: "📄 Nesearew Rch Paper Published: 'AI in Sustainable Agriculture' by Dr. Sharma.",
+      route: "/research/ai-agriculture",
+    },
+    {
+      title: "🤝 Partnership Announcement: Collaborating with TechGiant Industries for IoT solutions.",
+      route: "/partnerships/techgiant",
+    },
+    {
+      title: "🎓 Student Internship Program Applications are now open for Summer 2026.",
+      route: "/careers/internships",
+    },
+  ];
+
   return (
-    <div className="relative">
+    <div className="relative pt-20"> {/* Added pt-20 to account for fixed navbar, ensuring bar is visible below it */}
       <FluidCursor />
+
+      {/* Infinite Update Bar positioned below fixed navbar */}
+      <div className="relative z-30 bg-zinc-50 dark:bg-[#09090b]">
+        <InfiniteUpdateBar updates={updates} />
+      </div>
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden grid-bg pt-24 pb-24 md:pt-36 md:pb-40 dark:bg-[#09090b]">
+      <section className="relative overflow-hidden grid-bg pt-12 pb-24 md:pt-12 md:pb-40 dark:bg-[#09090b]">
         <div className="hidden dark:block">
           <motion.div
             animate={{ scale: [1, 1.05, 1], opacity: [0.08, 0.12, 0.08] }}
